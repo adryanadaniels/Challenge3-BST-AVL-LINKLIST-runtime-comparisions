@@ -52,7 +52,22 @@ bool BST::remove(Node*& node, int data)
 bool BST::search(Node* node, int data)
 {
 	// implement your search code here
+	if (node == nullptr) 
+	{
+		return false;
+	}
+	if (data > node->data)
+	{
+		return search(node->right, data);
+	}
+	if (data < node->data)
+	{
+		return search(node->left, data);
+	}
+	
 	return true;
+	
+
 }
 void BST::preorder(Node* node, std::ostream& os)
 {
