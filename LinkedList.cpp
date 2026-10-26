@@ -90,7 +90,16 @@ bool LinkedList::remove(int data)
 bool LinkedList::search(int data)
 {
 	// implement your search code here
-	return true;
+	lNode *tmp = head;
+	while (tmp != nullptr)
+	{
+		if (tmp->data == data)
+		{
+			return true;
+		}
+		tmp = tmp->next;
+	}
+	return false;
 }
 
 
