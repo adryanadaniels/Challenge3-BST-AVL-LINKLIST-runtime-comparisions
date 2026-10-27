@@ -62,5 +62,5 @@ std::vector<int> GenerateDESC(size_t size)
     {
         DESC_Sequence.push_back(i);
     }
-    reutrn DESC_Sequence;
+    return DESC_Sequence;
 }
