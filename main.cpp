@@ -4,12 +4,55 @@
 #include <random>
 #include <iomanip> 
 #include <algorithm>
-#include <bits/stdc++.h>
 
 //headers
 #include "BST.h"
 #include "AVL.h"
 #include "LinkedList.h"
+
+//Made a template to easily use the different classes
+template <typename StructureType> 
+double benchmarkInsertion (StructureType& ds, const std::vector<int>& data)
+{
+    std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); //start clock
+
+    for (int val: data)
+    {
+        ds.insert(val);
+    }
+    std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now(); //end clock
+
+    auto duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);//calculate duration in nanoseconds
+    return duration_ns.count();
+}
+double benchmarkInsertion (LinkedList& ds, const std::vector<int>& data) 
+{
+      std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); //start clock
+
+    for (int val: data)
+    {
+        ds.append(val);
+    }
+    std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now(); //end clock
+
+    auto duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);//calculate duration in nanoseconds
+    return duration_ns.count();
+}
+
+template<typename StructureType>
+/*double benchmarkSearch(StructureType& ds, const std::vector<int>& data)
+{
+    std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); //start clock
+
+    for (int val: data)
+    {
+        ds.search(val);
+    }
+    std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now(); //end clock
+
+    auto duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);//calculate duration in nanoseconds
+    return duration_ns.count();
+}*/
 
 std::vector<int> GenerateRand(size_t size);
 std::vector<int> GenerateASC(size_t size);
@@ -17,7 +60,134 @@ std::vector<int> GenerateDESC(size_t size);
 
 int main()
 {
-    
+    std::cout << "====== BENCHMARK: 500,000 ======" << std::endl;
+
+        std::vector<int> rand500k = GenerateRand(500000); //generate numbers
+
+        //INSERTIONS
+
+        //BST
+        BST bst500k; //create an instance of BST
+        double bst500k_insert = benchmarkInsertion(bst500k, rand500k);
+        //AVL
+        AVL avl500k;
+        double avl500k_insert = benchmarkInsertion(avl500k, rand500k);
+        //LL
+        LinkedList LL500k;
+        double LL500k_insert  = benchmarkInsertion(LL500k, rand500k);
+
+        //TODO: SEARCH
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (500 thousand): " << bst500k_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (500 thousand): " << avl500k_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (500 thousand): " << LL500k_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+
+    std::cout << "====== BENCHMARK: 1,000,000 ======" << std::endl;
+
+        std::vector<int> rand1Mil = GenerateRand(1000000); //generate numbers
+
+        //INSERTIONS
+        //BST
+        BST bst1Mil; //create an instance of BST
+        double bst1Mil_insert = benchmarkInsertion(bst1Mil, rand1Mil);
+        //AVL
+        AVL avl1Mil;
+        double avl1Mil_insert = benchmarkInsertion(avl1Mil, rand1Mil);
+        //LL
+        LinkedList LL1Mil;
+        double LL1Mil_insert  = benchmarkInsertion(LL1Mil, rand1Mil);
+
+        //TODO: SEARCH
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (1 million): " << bst1Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (1 million): " << avl1Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (1 million): " << LL1Mil_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+    std::cout << "====== BENCHMARK: 2,000,000  ======" << std::endl;
+
+        std::vector<int> rand2Mil = GenerateRand(2000000); //generate numbers
+
+        //INSERTIONS
+        //BST
+        BST bst2Mil; //create an instance of BST
+        double bst2Mil_insert = benchmarkInsertion(bst2Mil, rand2Mil);
+        //AVL
+        AVL avl2Mil;
+        double avl2Mil_insert = benchmarkInsertion(avl2Mil, rand2Mil);
+        //LL
+        LinkedList LL2Mil;
+        double LL2Mil_insert  = benchmarkInsertion(LL2Mil, rand2Mil);
+
+        //TODO: SEARCH
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (2 million): " << bst2Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (2 million): " << avl2Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (2 million): " << LL2Mil_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+    std::cout << "====== BENCHMARK: 10,000 ASC  ======" << std::endl;
+
+        std::vector<int> asc10k = GenerateASC(10000); //generate numbers
+
+        //INSERTIONS
+        //BST
+        BST bst10k; //create an instance of BST
+        double bst10k_insert = benchmarkInsertion(bst10k, asc10k);
+        //AVL
+        AVL avl10k;
+        double avl10k_insert = benchmarkInsertion(avl10k, asc10k);
+        //LL
+        LinkedList LL10k;
+        double LL10k_insert  = benchmarkInsertion(LL10k, asc10k);
+
+        //TODO: SEARCH
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (10 thousand): " << bst10k_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (10 thousand): " << avl10k_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (10 thousand): " << LL10k_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+    std::cout << "====== BENCHMARK: 10,000 DESC ======" << std::endl;
+        
+        std::vector<int> desc10k = GenerateDESC(10000); //generate numbers
+
+        //INSERTIONS
+        //BST
+        BST bst10kD; //create an instance of BST
+        double bst10kD_insert = benchmarkInsertion(bst10kD, desc10k);
+        //AVL
+        AVL avl10kD;
+        double avl10kD_insert = benchmarkInsertion(avl10kD, desc10k);
+        //LL
+        LinkedList LL10kD;
+        double LL10kD_insert  = benchmarkInsertion(LL10kD, desc10k);
+
+        //TODO: SEARCH
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (10 thousand): " << bst10kD_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (10 thousand): " << avl10kD_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (10 thousand): " << LL10kD_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+
 
     return 0;
 }
@@ -29,7 +199,7 @@ std::vector<int> GenerateRand(size_t size)
 
     //using a seed to generate random numbers 
     std::mt19937 rng(47); 
-    std::uniform_int_distribution <int> dist(1,10000000);
+    std::uniform_int_distribution <int> dist(1,3000000);
     
     for (int i = 1; i <= size; ++i)
     {
@@ -52,7 +222,6 @@ std::vector<int> GenerateASC(size_t size)
   }
   return ASC_Sequence;
 }
-
 std::vector<int> GenerateDESC(size_t size)
 {
     std::vector<int> DESC_Sequence; 
