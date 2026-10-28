@@ -31,7 +31,7 @@ private:
 	void preorder(Node* node, std::ostream& os);
 
 	void destroy(Node*& node);
-	void copy(Node* node, Node *&node);
+	void copy(Node* node, Node *&cnode);
 
 protected:
 	Node* root;
