@@ -40,19 +40,20 @@ double benchmarkInsertion (LinkedList& ds, const std::vector<int>& data)
 }
 
 template<typename StructureType>
-/*double benchmarkSearch(StructureType& ds, const std::vector<int>& data)
+double benchmarkSearch(StructureType& ds, int target, int &isfound)
 {
-    std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); //start clock
+    //start clock
+    std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); 
 
-    for (int val: data)
-    {
-        ds.search(val);
-    }
+    bool found = ds.search(target);
+   
     std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now(); //end clock
 
     auto duration_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);//calculate duration in nanoseconds
+    
+    isfound = found;
     return duration_ns.count();
-}*/
+}
 
 std::vector<int> GenerateRand(size_t size);
 std::vector<int> GenerateASC(size_t size);
