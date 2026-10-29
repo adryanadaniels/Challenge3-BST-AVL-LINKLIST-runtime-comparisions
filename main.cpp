@@ -105,9 +105,9 @@ int main()
         
         //SEARCH OUTPUT
         std::cout << std::endl;
-        std::cout << "BST Search Time (500 thousand): " << "Number: " << target500k << " Found: " << bstfound << "Time: " << bst500k_search << " nanoseconds" << std::endl;
-        std::cout << "AVL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << avlfound << "Time: " << avl500k_search << " nanoseconds" << std::endl;
-        std::cout << "LL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << LLfound << "Time: " << LL500k_search << " nanoseconds" << std::endl;
+        std::cout << "BST Search Time (500 thousand): " << "Number: " << target500k << " Found: " << bstfound << " Time: " << bst500k_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << avlfound << " Time: " << avl500k_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << LLfound << " Time: " << LL500k_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
 
         std::cout << "====== BENCHMARK: 1,000,000 ======" << std::endl;
