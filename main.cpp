@@ -195,6 +195,48 @@ int main()
         std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << " Time: " << LL2M_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
 
+    std::cout << "====== BENCHMARK: 3,000,000  ======" << std::endl;
+
+        std::vector<int> rand3Mil = GenerateRand(3000000); //generate numbers
+
+        //INSERTIONS
+        //BST
+        BST bst3Mil; //create an instance of BST
+        double bst3Mil_insert = benchmarkInsertion(bst3Mil, rand3Mil);
+        //AVL
+        AVL avl3Mil;
+        double avl3Mil_insert = benchmarkInsertion(avl3Mil, rand3Mil);
+        //LL
+        LinkedList LL3Mil;
+        double LL3Mil_insert  = benchmarkInsertion(LL3Mil, rand3Mil);
+
+        //SEARCH
+        int target3M = RNG();
+
+        //BST
+        double bst3M_search = benchmarkSearch(bst3Mil, target3M, bstfound);
+
+        //AVL 
+        double avl3M_search = benchmarkSearch(avl3Mil, target3M, avlfound);
+
+        //LL
+        double LL3M_search = benchmarkSearch(LL3Mil, target3M, LLfound);
+
+
+        //INSERTION OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Insert Time (2 million): " << bst3Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "AVL Insert Time (2 million): " << avl3Mil_insert << " nanoseconds" << std::endl;
+        std::cout << "LL Append Time (2 million): " << LL3Mil_insert << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
+        //TODO: SEARCH OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Search Time (2 million): " << "Number: " << target3M << " Found: " << bstfound << " Time: " << bst3M_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (2 million): " << "Number: " << target3M << " Found: " << avlfound << " Time: " << avl3M_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (2 million): " << "Number: " << target3M << " Found: " << LLfound << " Time: " << LL3M_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+        
     std::cout << "====== BENCHMARK: 10,000 ASC  ======" << std::endl;
 
         std::vector<int> asc10k = GenerateASC(10000); //generate numbers
@@ -323,10 +365,10 @@ std::vector<int> GenerateDESC(size_t size)
 
 int RNG()
 {
-    int num; 
-    static std::mt19937 rng(47);
+    std::random_device rd;
+    static std::mt19937 rng(rd());
     static std::uniform_int_distribution<int> dist(1,3000000); 
 
-    num = dist(rng);
-    return num;
+    
+    return dist(rng);
 }
