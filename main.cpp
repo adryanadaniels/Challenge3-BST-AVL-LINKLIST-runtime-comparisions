@@ -324,8 +324,8 @@ std::vector<int> GenerateDESC(size_t size)
 int RNG()
 {
     int num; 
-    std::mt19937 rng(47);
-    std::uniform_int_distribution<int> dist(1,3000000); 
+    static std::mt19937 rng(47);
+    static std::uniform_int_distribution<int> dist(1,3000000); 
 
     num = dist(rng);
     return num;
