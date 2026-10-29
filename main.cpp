@@ -101,10 +101,9 @@ int main()
         std::cout << "BST Insert Time (500 thousand): " << bst500k_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (500 thousand): " << avl500k_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (500 thousand): " << LL500k_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
         
         //SEARCH OUTPUT
-        std::cout << std::endl;
+        
         std::cout << "BST Search Time (500 thousand): " << "Number: " << target500k << " Found: " << bstfound << " Time: " << bst500k_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << avlfound << " Time: " << avl500k_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << LLfound << " Time: " << LL500k_search << " nanoseconds" << std::endl;
@@ -143,11 +142,11 @@ int main()
         std::cout << "BST Insert Time (1 million): " << bst1Mil_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (1 million): " << avl1Mil_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (1 million): " << LL1Mil_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
+        
         
         // SEARCH OUTPUT
 
-        std::cout << std::endl;
+        
         std::cout << "BST Search Time (1 million): " << "Number: " << target1M << " Found: " << bstfound << " Time: " << bst1M_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (1 million): " << "Number: " << target1M << " Found: " << avlfound << " Time: " << avl1M_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (1 million): " << "Number: " << target1M << " Found: " << LLfound << " Time: " << LL1M_search << " nanoseconds" << std::endl;
@@ -186,10 +185,10 @@ int main()
         std::cout << "BST Insert Time (2 million): " << bst2Mil_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (2 million): " << avl2Mil_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (2 million): " << LL2Mil_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
-        std::cout << std::endl;
+        
+        //SEARCH OUTPUT
+        
         std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << " Time: " << bst2M_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << " Time: " << avl2M_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << " Time: " << LL2M_search << " nanoseconds" << std::endl;
@@ -228,10 +227,10 @@ int main()
         std::cout << "BST Insert Time (2 million): " << bst3Mil_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (2 million): " << avl3Mil_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (2 million): " << LL3Mil_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
-        std::cout << std::endl;
+        
+        //SEARCH OUTPUT
+        
         std::cout << "BST Search Time (2 million): " << "Number: " << target3M << " Found: " << bstfound << " Time: " << bst3M_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (2 million): " << "Number: " << target3M << " Found: " << avlfound << " Time: " << avl3M_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (2 million): " << "Number: " << target3M << " Found: " << LLfound << " Time: " << LL3M_search << " nanoseconds" << std::endl;
@@ -269,10 +268,8 @@ int main()
         std::cout << "BST Insert Time (10 thousand): " << bst10k_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (10 thousand): " << avl10k_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (10 thousand): " << LL10k_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
         
         //SEARCH OUTPUT
-        std::cout << std::endl;
         std::cout << "BST Search Time (10 thousand): " << "Number: " << target10k << " Found: " << bstfound << " Time: " << bst10k_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << avlfound << " Time: " << avl10k_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << " Time: " << LL10k_search << " nanoseconds" << std::endl;
@@ -309,10 +306,8 @@ int main()
         std::cout << "BST Insert Time (10 thousand): " << bst10kD_insert << " nanoseconds" << std::endl;
         std::cout << "AVL Insert Time (10 thousand): " << avl10kD_insert << " nanoseconds" << std::endl;
         std::cout << "LL Append Time (10 thousand): " << LL10kD_insert << " nanoseconds" << std::endl;
-        std::cout << std::endl;
         
         //SEARCH OUTPUT
-        std::cout << std::endl;
         std::cout << "BST Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << bstfound << " Time: " << bst10kD_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << avlfound << " Time: " << avl10kD_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << LLfound << " Time: " << LL10kD_search << " nanoseconds" << std::endl;
