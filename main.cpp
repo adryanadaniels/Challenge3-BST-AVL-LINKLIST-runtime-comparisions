@@ -169,6 +169,17 @@ int main()
         double LL2Mil_insert  = benchmarkInsertion(LL2Mil, rand2Mil);
 
         //TODO: SEARCH
+        int target2M = RNG();
+
+        //BST
+        double bst2M_search = benchmarkSearch(bst2Mil, target2M, bstfound);
+
+        //AVL 
+        double avl2M_search = benchmarkSearch(avl2Mil, target2M, avlfound);
+
+        //LL
+        double LL2M_search = benchmarkSearch(LL2Mil, target2M, LLfound);
+
 
         //INSERTION OUTPUT
         std::cout << std::endl;
@@ -178,6 +189,11 @@ int main()
         std::cout << std::endl;
         
         //TODO: SEARCH OUTPUT
+         std::cout << std::endl;
+        std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << "Time: " << bst2M_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << "Time: " << avl2M_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << "Time: " << LL2M_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
     std::cout << "====== BENCHMARK: 10,000 ASC  ======" << std::endl;
 
         std::vector<int> asc10k = GenerateASC(10000); //generate numbers
