@@ -148,9 +148,9 @@ int main()
         // SEARCH OUTPUT
 
         std::cout << std::endl;
-        std::cout << "BST Search Time (1 million): " << "Number: " << target1M << " Found: " << bstfound << "Time: " << bst1M_search << " nanoseconds" << std::endl;
-        std::cout << "AVL Search Time (1 million): " << "Number: " << target1M << " Found: " << avlfound << "Time: " << avl1M_search << " nanoseconds" << std::endl;
-        std::cout << "LL Search Time (1 million): " << "Number: " << target1M << " Found: " << LLfound << "Time: " << LL1M_search << " nanoseconds" << std::endl;
+        std::cout << "BST Search Time (1 million): " << "Number: " << target1M << " Found: " << bstfound << " Time: " << bst1M_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (1 million): " << "Number: " << target1M << " Found: " << avlfound << " Time: " << avl1M_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (1 million): " << "Number: " << target1M << " Found: " << LLfound << " Time: " << LL1M_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
 
     std::cout << "====== BENCHMARK: 2,000,000  ======" << std::endl;
@@ -190,9 +190,9 @@ int main()
         
         //TODO: SEARCH OUTPUT
         std::cout << std::endl;
-        std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << "Time: " << bst2M_search << " nanoseconds" << std::endl;
-        std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << "Time: " << avl2M_search << " nanoseconds" << std::endl;
-        std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << "Time: " << LL2M_search << " nanoseconds" << std::endl;
+        std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << " Time: " << bst2M_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << " Time: " << avl2M_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << " Time: " << LL2M_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
 
     std::cout << "====== BENCHMARK: 10,000 ASC  ======" << std::endl;
@@ -231,9 +231,9 @@ int main()
         
         //SEARCH OUTPUT
         std::cout << std::endl;
-        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10k << " Found: " << bstfound << "Time: " << bst10k_search << " nanoseconds" << std::endl;
-        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << avlfound << "Time: " << avl10k_search << " nanoseconds" << std::endl;
-        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << "Time: " << LL10k_search << " nanoseconds" << std::endl;
+        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10k << " Found: " << bstfound << " Time: " << bst10k_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << avlfound << " Time: " << avl10k_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << " Time: " << LL10k_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
     std::cout << "====== BENCHMARK: 10,000 DESC ======" << std::endl;
         
@@ -271,9 +271,9 @@ int main()
         
         //SEARCH OUTPUT
         std::cout << std::endl;
-        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << bstfound << "Time: " << bst10kD_search << " nanoseconds" << std::endl;
-        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << avlfound << "Time: " << avl10kD_search << " nanoseconds" << std::endl;
-        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << LLfound << "Time: " << LL10kD_search << " nanoseconds" << std::endl;
+        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << bstfound << " Time: " << bst10kD_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << avlfound << " Time: " << avl10kD_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << LLfound << " Time: " << LL10kD_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
 
     return 0;
