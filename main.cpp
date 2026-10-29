@@ -338,13 +338,11 @@ std::vector<int> GenerateASC(size_t size)
     ASC_Sequence.reserve(size);
     int N = size; 
     
-  
-
-  for (int i = 1; i <= N; ++i)
-  {
-    ASC_Sequence.push_back(i);
-  }
-  return ASC_Sequence;
+    for (int i = 1; i <= N; ++i)
+    {
+        ASC_Sequence.push_back(i);
+    }
+    return ASC_Sequence;
 }
 std::vector<int> GenerateDESC(size_t size)
 {
