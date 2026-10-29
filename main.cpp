@@ -126,6 +126,17 @@ int main()
         double LL1Mil_insert  = benchmarkInsertion(LL1Mil, rand1Mil);
 
         //TODO: SEARCH
+        int target1M = RNG();
+
+        //BST
+        double bst1M_search = benchmarkSearch(bst1Mil, target1M, bstfound);
+
+        //AVL 
+        double avl1M_search = benchmarkSearch(avl1Mil, target1M, avlfound);
+
+        //LL
+        double LL1M_search = benchmarkSearch(LL1Mil, target1M, LLfound);
+
 
         //INSERTION OUTPUT
         std::cout << std::endl;
@@ -134,7 +145,14 @@ int main()
         std::cout << "LL Append Time (1 million): " << LL1Mil_insert << " nanoseconds" << std::endl;
         std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
+        // SEARCH OUTPUT
+
+        std::cout << std::endl;
+        std::cout << "BST Search Time (1 million): " << "Number: " << target1M << " Found: " << bstfound << "Time: " << bst1M_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (1 million): " << "Number: " << target1M << " Found: " << avlfound << "Time: " << avl1M_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (1 million): " << "Number: " << target1M << " Found: " << LLfound << "Time: " << LL1M_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
+
     std::cout << "====== BENCHMARK: 2,000,000  ======" << std::endl;
 
         std::vector<int> rand2Mil = GenerateRand(2000000); //generate numbers
