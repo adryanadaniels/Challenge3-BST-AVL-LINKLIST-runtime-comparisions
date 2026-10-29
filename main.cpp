@@ -168,7 +168,7 @@ int main()
         LinkedList LL2Mil;
         double LL2Mil_insert  = benchmarkInsertion(LL2Mil, rand2Mil);
 
-        //TODO: SEARCH
+        //SEARCH
         int target2M = RNG();
 
         //BST
@@ -189,11 +189,12 @@ int main()
         std::cout << std::endl;
         
         //TODO: SEARCH OUTPUT
-         std::cout << std::endl;
+        std::cout << std::endl;
         std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << "Time: " << bst2M_search << " nanoseconds" << std::endl;
         std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << "Time: " << avl2M_search << " nanoseconds" << std::endl;
         std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << "Time: " << LL2M_search << " nanoseconds" << std::endl;
         std::cout << std::endl;
+
     std::cout << "====== BENCHMARK: 10,000 ASC  ======" << std::endl;
 
         std::vector<int> asc10k = GenerateASC(10000); //generate numbers
@@ -209,7 +210,17 @@ int main()
         LinkedList LL10k;
         double LL10k_insert  = benchmarkInsertion(LL10k, asc10k);
 
-        //TODO: SEARCH
+        //SEARCH
+        int target10k = RNG();
+
+        //BST
+        double bst10k_search = benchmarkSearch(bst10k, target10k, bstfound);
+
+        //AVL 
+        double avl10k_search = benchmarkSearch(avl10k, target10k, avlfound);
+
+        //LL
+        double LL10k_search = benchmarkSearch(LL10k, target10k, LLfound);
 
         //INSERTION OUTPUT
         std::cout << std::endl;
@@ -218,7 +229,12 @@ int main()
         std::cout << "LL Append Time (10 thousand): " << LL10k_insert << " nanoseconds" << std::endl;
         std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
+        //SEARCH OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10k << " Found: " << bstfound << "Time: " << bst10k_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << avlfound << "Time: " << avl10k_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << "Time: " << LL10k_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
     std::cout << "====== BENCHMARK: 10,000 DESC ======" << std::endl;
         
         std::vector<int> desc10k = GenerateDESC(10000); //generate numbers
@@ -234,7 +250,17 @@ int main()
         LinkedList LL10kD;
         double LL10kD_insert  = benchmarkInsertion(LL10kD, desc10k);
 
-        //TODO: SEARCH
+        //SEARCH
+        int target10kD = RNG();
+
+        //BST
+        double bst10kD_search = benchmarkSearch(bst10kD, target10kD, bstfound);
+
+        //AVL 
+        double avl10kD_search = benchmarkSearch(avl10kD, target10kD, avlfound);
+
+        //LL
+        double LL10kD_search = benchmarkSearch(LL10kD, target10kD, LLfound);
 
         //INSERTION OUTPUT
         std::cout << std::endl;
@@ -243,8 +269,12 @@ int main()
         std::cout << "LL Append Time (10 thousand): " << LL10kD_insert << " nanoseconds" << std::endl;
         std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
-
+        //SEARCH OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << bstfound << "Time: " << bst10kD_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << avlfound << "Time: " << avl10kD_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (10 thousand): " << "Number: " << target10kD << " Found: " << LLfound << "Time: " << LL10kD_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
 
     return 0;
 }
