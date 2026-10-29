@@ -125,7 +125,7 @@ void AVL::destroy(Node*& node)
 	delete node;
 	node = nullptr;
 }
-void AVL::copy(Node* node, Node &*cnode)
+void AVL::copy(Node* node, Node *&cnode)
 {
 	if (node == nullptr) return;
 	cnode = new Node(node->data);
