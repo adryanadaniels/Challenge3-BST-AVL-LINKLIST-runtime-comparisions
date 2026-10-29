@@ -26,6 +26,7 @@ double benchmarkInsertion (StructureType& ds, const std::vector<int>& data)
     return duration_ns.count();
 }
 double benchmarkInsertion (LinkedList& ds, const std::vector<int>& data) 
+
 {
       std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now(); //start clock
 
@@ -58,6 +59,7 @@ double benchmarkSearch(StructureType& ds, int target, int &isfound)
 std::vector<int> GenerateRand(size_t size);
 std::vector<int> GenerateASC(size_t size);
 std::vector<int> GenerateDESC(size_t size);
+int RNG();
 
 int main()
 {
@@ -77,8 +79,23 @@ int main()
         LinkedList LL500k;
         double LL500k_insert  = benchmarkInsertion(LL500k, rand500k);
 
-        //TODO: SEARCH
+        //SEARCH
 
+        int target500k = RNG();
+        int bstfound;
+        int avlfound; 
+        int LLfound;
+
+        //BST
+        double bst500k_search = benchmarkSearch(bst500k, target500k, bstfound);
+
+        //AVL 
+        double avl500k_search = benchmarkSearch(avl500k, target500k, avlfound);
+
+        //LL
+        double LL500k_search = benchmarkSearch(LL500k, target500k, LLfound);
+
+      
         //INSERTION OUTPUT
         std::cout << std::endl;
         std::cout << "BST Insert Time (500 thousand): " << bst500k_insert << " nanoseconds" << std::endl;
@@ -86,9 +103,14 @@ int main()
         std::cout << "LL Append Time (500 thousand): " << LL500k_insert << " nanoseconds" << std::endl;
         std::cout << std::endl;
         
-        //TODO: SEARCH OUTPUT
+        //SEARCH OUTPUT
+        std::cout << std::endl;
+        std::cout << "BST Search Time (500 thousand): " << "Number: " << target500k << " Found: " << bstfound << "Time: " << bst500k_search << " nanoseconds" << std::endl;
+        std::cout << "AVL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << avlfound << "Time: " << avl500k_search << " nanoseconds" << std::endl;
+        std::cout << "LL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << LLfound << "Time: " << LL500k_search << " nanoseconds" << std::endl;
+        std::cout << std::endl;
 
-    std::cout << "====== BENCHMARK: 1,000,000 ======" << std::endl;
+        std::cout << "====== BENCHMARK: 1,000,000 ======" << std::endl;
 
         std::vector<int> rand1Mil = GenerateRand(1000000); //generate numbers
 
@@ -200,7 +222,7 @@ std::vector<int> GenerateRand(size_t size)
 
     //using a seed to generate random numbers 
     std::mt19937 rng(47); 
-    std::uniform_int_distribution <int> dist(1,3000000);
+    std::uniform_int_distribution<int> dist(1,3000000);
     
     for (int i = 1; i <= size; ++i)
     {
@@ -233,4 +255,14 @@ std::vector<int> GenerateDESC(size_t size)
         DESC_Sequence.push_back(i);
     }
     return DESC_Sequence;
+}
+
+int RNG()
+{
+    int num; 
+    std::mt19937 rng(47);
+    std::uniform_int_distribution<int> dist(1,3000000); 
+
+    num = dist(rng);
+    return num;
 }
