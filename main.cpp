@@ -108,7 +108,7 @@ int main()
 
     std::vector<int> rand1Mil = GenerateRand(1000000); // generate numbers
 
-    BST bst1Mil; // create an instance of BST
+    BST bst1Mil; 
     AVL avl1Mil;
     LinkedList LL1Mil;
 
@@ -142,7 +142,7 @@ int main()
 
     std::vector<int> rand2Mil = GenerateRand(2000000); // generate numbers
 
-    BST bst2Mil; // create an instance of BST
+    BST bst2Mil; 
     AVL avl2Mil;
     LinkedList LL2Mil;
 
@@ -174,7 +174,7 @@ int main()
 
     std::vector<int> rand3Mil = GenerateRand(3000000); // generate numbers
 
-    BST bst3Mil; // create an instance of BST
+    BST bst3Mil; 
     AVL avl3Mil;
     LinkedList LL3Mil;
 
@@ -207,27 +207,20 @@ int main()
 
     std::vector<int> asc10k = GenerateASC(10000); // generate numbers
 
-    // INSERTIONS
-    // BST
-    BST bst10k; // create an instance of BST
-    double bst10k_insert = benchmarkInsertion(bst10k, asc10k);
-    // AVL
+    BST bst10k; 
     AVL avl10k;
-    double avl10k_insert = benchmarkInsertion(avl10k, asc10k);
-    // LL
     LinkedList LL10k;
+
+    int target10k = RNG();
+
+    // INSERTIONS
+    double bst10k_insert = benchmarkInsertion(bst10k, asc10k);
+    double avl10k_insert = benchmarkInsertion(avl10k, asc10k);
     double LL10k_insert = benchmarkInsertion(LL10k, asc10k);
 
     // SEARCH
-    int target10k = RNG();
-
-    // BST
     double bst10k_search = benchmarkSearch(bst10k, target10k, bstfound);
-
-    // AVL
     double avl10k_search = benchmarkSearch(avl10k, target10k, avlfound);
-
-    // LL
     double LL10k_search = benchmarkSearch(LL10k, target10k, LLfound);
 
     // INSERTION OUTPUT
@@ -242,6 +235,8 @@ int main()
     std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << " Time: " << LL10k_search << " nanoseconds" << std::endl;
     std::cout << std::endl;
 
+
+    
     std::cout << "====== BENCHMARK: 10,000 DESC ======" << std::endl;
 
     std::vector<int> desc10k = GenerateDESC(10000); // generate numbers
