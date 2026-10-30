@@ -65,36 +65,30 @@ int RNG();
 
 int main()
 {
-    std::cout << "====== BENCHMARK: 500,000 ======" << std::endl;
-
-    std::vector<int> rand500k = GenerateRand(500000); // generate numbers
-
-    // INSERTIONS
-
-    // BST
-    BST bst500k; // create an instance of BST
-    double bst500k_insert = benchmarkInsertion(bst500k, rand500k);
-    // AVL
-    AVL avl500k;
-    double avl500k_insert = benchmarkInsertion(avl500k, rand500k);
-    // LL
-    LinkedList LL500k;
-    double LL500k_insert = benchmarkInsertion(LL500k, rand500k);
-
-    // SEARCH
-
-    int target500k = RNG();
     int bstfound;
     int avlfound;
     int LLfound;
 
-    // BST
+    std::cout << "====== BENCHMARK: 500,000 ======" << std::endl;
+
+    std::vector<int> rand500k = GenerateRand(500000); // generate numbers
+
+    // creating instances
+    BST bst500k;
+    AVL avl500k;
+    LinkedList LL500k;
+
+    int target500k = RNG();
+
+    // INSERTIONS
+
+    double bst500k_insert = benchmarkInsertion(bst500k, rand500k);
+    double avl500k_insert = benchmarkInsertion(avl500k, rand500k);
+    double LL500k_insert = benchmarkInsertion(LL500k, rand500k);
+
+    // SEARCH
     double bst500k_search = benchmarkSearch(bst500k, target500k, bstfound);
-
-    // AVL
     double avl500k_search = benchmarkSearch(avl500k, target500k, avlfound);
-
-    // LL
     double LL500k_search = benchmarkSearch(LL500k, target500k, LLfound);
 
     // INSERTION OUTPUT
@@ -104,7 +98,6 @@ int main()
     std::cout << "LL Append Time (500 thousand): " << LL500k_insert << " nanoseconds" << std::endl;
 
     // SEARCH OUTPUT
-
     std::cout << "BST Search Time (500 thousand): " << "Number: " << target500k << " Found: " << bstfound << " Time: " << bst500k_search << " nanoseconds" << std::endl;
     std::cout << "AVL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << avlfound << " Time: " << avl500k_search << " nanoseconds" << std::endl;
     std::cout << "LL Search Time (500 thousand): " << "Number: " << target500k << " Found: " << LLfound << " Time: " << LL500k_search << " nanoseconds" << std::endl;
@@ -114,27 +107,22 @@ int main()
 
     std::vector<int> rand1Mil = GenerateRand(1000000); // generate numbers
 
-    // INSERTIONS
-    // BST
     BST bst1Mil; // create an instance of BST
-    double bst1Mil_insert = benchmarkInsertion(bst1Mil, rand1Mil);
-    // AVL
     AVL avl1Mil;
-    double avl1Mil_insert = benchmarkInsertion(avl1Mil, rand1Mil);
-    // LL
     LinkedList LL1Mil;
-    double LL1Mil_insert = benchmarkInsertion(LL1Mil, rand1Mil);
 
-    // TODO: SEARCH
     int target1M = RNG();
 
-    // BST
+    // INSERTIONS
+
+    double bst1Mil_insert = benchmarkInsertion(bst1Mil, rand1Mil);
+    double avl1Mil_insert = benchmarkInsertion(avl1Mil, rand1Mil);
+    double LL1Mil_insert = benchmarkInsertion(LL1Mil, rand1Mil);
+
+    // SEARCH
+
     double bst1M_search = benchmarkSearch(bst1Mil, target1M, bstfound);
-
-    // AVL
     double avl1M_search = benchmarkSearch(avl1Mil, target1M, avlfound);
-
-    // LL
     double LL1M_search = benchmarkSearch(LL1Mil, target1M, LLfound);
 
     // INSERTION OUTPUT
@@ -144,7 +132,6 @@ int main()
     std::cout << "LL Append Time (1 million): " << LL1Mil_insert << " nanoseconds" << std::endl;
 
     // SEARCH OUTPUT
-
     std::cout << "BST Search Time (1 million): " << "Number: " << target1M << " Found: " << bstfound << " Time: " << bst1M_search << " nanoseconds" << std::endl;
     std::cout << "AVL Search Time (1 million): " << "Number: " << target1M << " Found: " << avlfound << " Time: " << avl1M_search << " nanoseconds" << std::endl;
     std::cout << "LL Search Time (1 million): " << "Number: " << target1M << " Found: " << LLfound << " Time: " << LL1M_search << " nanoseconds" << std::endl;
@@ -154,27 +141,20 @@ int main()
 
     std::vector<int> rand2Mil = GenerateRand(2000000); // generate numbers
 
-    // INSERTIONS
-    // BST
     BST bst2Mil; // create an instance of BST
-    double bst2Mil_insert = benchmarkInsertion(bst2Mil, rand2Mil);
-    // AVL
     AVL avl2Mil;
-    double avl2Mil_insert = benchmarkInsertion(avl2Mil, rand2Mil);
-    // LL
     LinkedList LL2Mil;
+
+    int target2M = RNG();
+
+    // INSERTIONS
+    double bst2Mil_insert = benchmarkInsertion(bst2Mil, rand2Mil);
+    double avl2Mil_insert = benchmarkInsertion(avl2Mil, rand2Mil);
     double LL2Mil_insert = benchmarkInsertion(LL2Mil, rand2Mil);
 
     // SEARCH
-    int target2M = RNG();
-
-    // BST
     double bst2M_search = benchmarkSearch(bst2Mil, target2M, bstfound);
-
-    // AVL
     double avl2M_search = benchmarkSearch(avl2Mil, target2M, avlfound);
-
-    // LL
     double LL2M_search = benchmarkSearch(LL2Mil, target2M, LLfound);
 
     // INSERTION OUTPUT
@@ -184,7 +164,6 @@ int main()
     std::cout << "LL Append Time (2 million): " << LL2Mil_insert << " nanoseconds" << std::endl;
 
     // SEARCH OUTPUT
-
     std::cout << "BST Search Time (2 million): " << "Number: " << target2M << " Found: " << bstfound << " Time: " << bst2M_search << " nanoseconds" << std::endl;
     std::cout << "AVL Search Time (2 million): " << "Number: " << target2M << " Found: " << avlfound << " Time: " << avl2M_search << " nanoseconds" << std::endl;
     std::cout << "LL Search Time (2 million): " << "Number: " << target2M << " Found: " << LLfound << " Time: " << LL2M_search << " nanoseconds" << std::endl;
@@ -194,27 +173,21 @@ int main()
 
     std::vector<int> rand3Mil = GenerateRand(3000000); // generate numbers
 
-    // INSERTIONS
-    // BST
     BST bst3Mil; // create an instance of BST
-    double bst3Mil_insert = benchmarkInsertion(bst3Mil, rand3Mil);
-    // AVL
     AVL avl3Mil;
-    double avl3Mil_insert = benchmarkInsertion(avl3Mil, rand3Mil);
-    // LL
     LinkedList LL3Mil;
+
+    int target3M = RNG();
+
+    // INSERTIONS
+    double bst3Mil_insert = benchmarkInsertion(bst3Mil, rand3Mil);
+    double avl3Mil_insert = benchmarkInsertion(avl3Mil, rand3Mil);
     double LL3Mil_insert = benchmarkInsertion(LL3Mil, rand3Mil);
 
     // SEARCH
-    int target3M = RNG();
 
-    // BST
     double bst3M_search = benchmarkSearch(bst3Mil, target3M, bstfound);
-
-    // AVL
     double avl3M_search = benchmarkSearch(avl3Mil, target3M, avlfound);
-
-    // LL
     double LL3M_search = benchmarkSearch(LL3Mil, target3M, LLfound);
 
     // INSERTION OUTPUT
@@ -224,7 +197,6 @@ int main()
     std::cout << "LL Append Time (3 million): " << LL3Mil_insert << " nanoseconds" << std::endl;
 
     // SEARCH OUTPUT
-
     std::cout << "BST Search Time (3 million): " << "Number: " << target3M << " Found: " << bstfound << " Time: " << bst3M_search << " nanoseconds" << std::endl;
     std::cout << "AVL Search Time (3 million): " << "Number: " << target3M << " Found: " << avlfound << " Time: " << avl3M_search << " nanoseconds" << std::endl;
     std::cout << "LL Search Time (3 million): " << "Number: " << target3M << " Found: " << LLfound << " Time: " << LL3M_search << " nanoseconds" << std::endl;
@@ -268,31 +240,25 @@ int main()
     std::cout << "AVL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << avlfound << " Time: " << avl10k_search << " nanoseconds" << std::endl;
     std::cout << "LL Search Time (10 thousand): " << "Number: " << target10k << " Found: " << LLfound << " Time: " << LL10k_search << " nanoseconds" << std::endl;
     std::cout << std::endl;
+
     std::cout << "====== BENCHMARK: 10,000 DESC ======" << std::endl;
 
     std::vector<int> desc10k = GenerateDESC(10000); // generate numbers
 
-    // INSERTIONS
-    // BST
     BST bst10kD; // create an instance of BST
-    double bst10kD_insert = benchmarkInsertion(bst10kD, desc10k);
-    // AVL
     AVL avl10kD;
-    double avl10kD_insert = benchmarkInsertion(avl10kD, desc10k);
-    // LL
     LinkedList LL10kD;
+
+    int target10kD = RNG();
+
+    // INSERTIONS
+    double bst10kD_insert = benchmarkInsertion(bst10kD, desc10k);
+    double avl10kD_insert = benchmarkInsertion(avl10kD, desc10k);
     double LL10kD_insert = benchmarkInsertion(LL10kD, desc10k);
 
     // SEARCH
-    int target10kD = RNG();
-
-    // BST
     double bst10kD_search = benchmarkSearch(bst10kD, target10kD, bstfound);
-
-    // AVL
     double avl10kD_search = benchmarkSearch(avl10kD, target10kD, avlfound);
-
-    // LL
     double LL10kD_search = benchmarkSearch(LL10kD, target10kD, LLfound);
 
     // INSERTION OUTPUT
