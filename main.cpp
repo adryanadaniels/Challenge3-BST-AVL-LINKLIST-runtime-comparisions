@@ -2,9 +2,7 @@
 #include <vector>
 #include <chrono>
 #include <random>
-#include <iomanip> 
-#include <algorithm>
-
+#include <process.h>
 //headers
 #include "BST.h"
 #include "AVL.h"
