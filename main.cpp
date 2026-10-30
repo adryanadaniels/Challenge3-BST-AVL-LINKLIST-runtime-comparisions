@@ -8,7 +8,7 @@
 #include "AVL.h"
 #include "LinkedList.h"
 
-//generating rabdom seed
+//generating random seed
 unsigned int pid = _getpid();
 std::mt19937 rng(pid);
 std::uniform_int_distribution<int> dist(1, 3000000);
